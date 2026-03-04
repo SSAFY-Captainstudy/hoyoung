@@ -41,8 +41,14 @@ for t_c in range(1, T+1):
                 mine_size_list.append(m_s)
 
     mine_cnt = len(gold_cnt_list)
+    most_gold = max(gold_cnt_list)
+    result_mine = max(mine_size_list)
 
+    for i in range(mine_cnt):
+        if gold_cnt_list[i] == most_gold:
+            if result_mine>mine_size_list[i]:
+                result_mine = mine_size_list[i]
 
-    print(f'#{t_c} {max(gold_cnt_list)} {min(mine_size_list)}')
+    print(f'#{t_c} {most_gold} {result_mine}')
 
 
